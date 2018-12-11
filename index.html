@@ -1,44 +1,76 @@
 <!DOCTYPE html>
 <html lang='en'>
    <head>
+    <body> 
+        <!-- Basic Page Needs -->
       <meta charset="utf-8">
+      <!-- Mobile Specific Metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="style.css">
-      <title>MS Weather App</title>
+      <title>MS: My Sunshine App</title>
       
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <!-- Google Maps API with Key -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdS05wFQibikM0X1HQQbizRF52sOQRLUA&amp;libraries=places"></script>
      
+
+
       <div class="grid-container">
-        <header role="banner">
+        <header role="banner" class="hero-image">
+            <h1>MS: My Sunshine App</h1>
                 <h2>Sunshine Recommendations for Optimal Vitamin D Synthesis for Individuals with Multiple Sclerosis</h2>
         </header>
   </head>
-  
-   <body> 
-        
+
+    <div class="navbar-spacer"></div>
+    <nav role="navigation" class="navbar">
+            <div class="navbox container">
+                <ul class="navbar-list">
+                    <li class="navbar-item pageTitle"><span>MS My Sunshine App | Local Forecast Feedback for Optimal Vitamin D Synthesis and Recommendations for Heat Related Symptoms</span></li>
+                    <li class="navbar-item"><a class="navbar-item navbar-link" href="#resources">Resources</a></li> 
+                    <li class="navbar-item"><a class="navbar-item navbar-link" href="#email-form">Participate in Research</a></li>
+                </ul>  
+            </div>
+        </nav>
+
     <h1><section id= "forecast" class="middle">
         <div id="temp" class="middle"></div> 
         <div id="minutely" class="middle"></div>
-        <div id="location" class="middle"></div></h1>
+        <div id="location" class="middle"></div>
     
-    </section>
+    </section></h1>
 
      <section id="feedback" class= "right">
             <h1><div id="tempFeedback" class= "right"></div>
             <div id="latitudeFeedback" class= "right"></div></h1>
-        
-    </section>
+</section>
+
       
-   
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+ <script src="app.js"></script>
 
 </body>
-<div class="footer">
+
+<footer>
       
-    <p>Resources</p>
-  </div>
-   <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-   <script src="app.js"></script>
+    <h2>Resources</h2>
+    <p> If you're interested in learning more about current research in Multiple Sclerosis and how you can participate, please see the resources below.</p>
+        <ul> 
+            <li> <a href="https://www.nationalmssociety.org/Research" target="_blank"> Multiple Sclerosis Society -- Stop Disease Progression </a>
+                 </li>
+            <li><a href="https://www.mayoclinic.org/diseases-conditions/multiple-sclerosis/expert-answers/vitamin-d-and-ms/faq-20058258" target="blank"> Mayo Clinic -- Vitamin D and MS: Is there any Connection?</a>
+            </li>
+        </ul>
+</footer>
+
+   <!-- Google Maps API with Key -->
+   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdS05wFQibikM0X1HQQbizRF52sOQRLUA&amp;libraries=places"></script>
+   <div style="position: absolute; left: 0px; top: -2px; height: 1px; overflow: hidden; visibility: 
+   hidden; width: 1px;"><span style="position: absolute; font-size: 300px; width: auto; height: auto;
+    margin: 0px; padding: 0px; font-family: Roboto, Arial, sans-serif;">BESbswy</span></div>
+
+
 </html> 

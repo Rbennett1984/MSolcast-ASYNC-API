@@ -54,9 +54,3 @@ function weather() {
 
 weather();
 
-
-
-
-
-
-
