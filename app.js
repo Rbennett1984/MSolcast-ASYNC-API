@@ -18,18 +18,25 @@ function weather() {
       $('#minutely').html(data.minutely.summary);
 
     if (position.coords.latitude > 37) {
-        latitudeFeedback.innerHTML = ("Expose Your Skin Around Midday for at least 15 minutes.")
+        latitudeFeedback.innerHTML = ("In the winter, it's virtually impossible to produce vitamin D \
+        from the sun if you live 37 degrees above the equator (or north of Atlanta), because the sun \
+        never gets high enough in the sky for its ultraviolet B rays to penetrate the atmosphere, \
+        according to Harvard Womens' Health Watch. But summer is a great time to stock up on the nutrient. \
+        When the sun's UV-B rays hit the skin, a reaction takes place that enables skin cells to manufacture \
+        vitamin D.")
     }
       else if (position.coords.latitude < 37) { 
-        latitudeFeedback.innerHTML = ("Your are close enough to the equator that you can get your regular dose of <br> sunshine with regular sun exposure.")
+        latitudeFeedback.innerHTML = ("Your are close enough to the equator that you can get your regular dose of <br> vitamin with regular sun exposure.")
       }
       else {
         latitudeFeedback.innerHTML = ("Are you still on Earth?")
       }
 
       //if/else for tempfeedback
-  if (data.currently.temperature < 80 ) {
-    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. ENJOY!")
+  if (data.currently.temperature < 80) {
+    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions\
+     when temparatures are above 80 degree F. \
+    Individuals with MS often report more symptoms at higher temps! ENJOY!")
   }
 
     else if (data.currently.temperature > 80) { 
@@ -37,7 +44,7 @@ function weather() {
   }
 
     else {
-    tempFeedback.innerHTML = ("The weather may not be suitable for outdoor activities")
+    tempFeedback.innerHTML = ("The weather may not be suitable for outdoor activities. Bundle up! Brrrr")
 
   };
   
