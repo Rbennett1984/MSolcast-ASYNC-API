@@ -1,3 +1,6 @@
+
+
+
 //geolocation w DarkSky weather API 
 function weather() {
 
@@ -11,11 +14,11 @@ function weather() {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
 
-    location.innerHTML = 'Latitude is ' + latitude + '° <br> Longitude is ' + longitude + '°';
+    location.innerHTML = 'Your latitude is ' + latitude + '° <br> Your longitude is ' + longitude + '°';
 
      $.getJSON(url + apiKey + "/" + latitude + "," + longitude + "?callback=?", function(data) {
-      $('#temp').html(data.currently.temperature + '° F');
-      $('#minutely').html(data.minutely.summary);
+      $('#temp').html('Your current temperature: ' + data.currently.temperature + '° F');
+      $('#minutely').html('Your current forecast: ' + data.minutely.summary);
 
     if (position.coords.latitude > 37) {
         latitudeFeedback.innerHTML = ("In the winter, it's virtually impossible to produce vitamin D \
@@ -26,7 +29,7 @@ function weather() {
         vitamin D.")
     }
       else if (position.coords.latitude < 37) { 
-        latitudeFeedback.innerHTML = ("Your are close enough to the equator that you can get your regular dose of <br> vitamin with regular sun exposure.")
+        latitudeFeedback.innerHTML = ("You are also close enough to the equator that you can get your regular dose of Vitamin D with regular sun exposure. Take advantage of the sun around midday.")
       }
       else {
         latitudeFeedback.innerHTML = ("Are you still on Earth?")
@@ -34,9 +37,9 @@ function weather() {
 
       //if/else for tempfeedback
   if (data.currently.temperature < 80) {
-    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions\
+    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions and prevent sunburn and to other MS related symptoms\
      when temparatures are above 80 degree F. \
-    Individuals with MS often report more symptoms at higher temps! ENJOY!")
+    Individuals with MS often report more symptoms at higher temperatures.")
   }
 
     else if (data.currently.temperature > 80) { 
@@ -59,5 +62,43 @@ function weather() {
   location.innerHTML = "Locating...";
 }
 
-weather();
 
+
+
+
+//Solar forecast for zenith using solcast API 
+
+function suncast() {
+  var location = document.getElementById("location");
+  var apiKey = 'F4qebA-81wVfGJiJYfm_XLKHzSDgG99J'; //solcast API key
+  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=149.117&latitude=-35.277&api_key=>F4qebA-81wVfGJiJYfm_XLKHzSDgG99J<&format=jso';
+  var data = 'zenith'
+
+$("#zenith-button").click(function(){
+  $.getJSON( url, function(data, status){
+    alert("zenith:" + apikey + data + "?callback=?" + status);
+    $('#zenith').html('Your current solar zenith: ' + data.zenith);
+  });
+});
+
+}
+
+
+ 
+
+//click event for local forecast
+$('#forecast-button').click(function(){
+  $('html, body').animate({
+    scrollTop: $('#feedback').offset().top
+}, 1000);
+});
+
+//click event for resources button
+$('#resources-button').click(function(){
+  $('html, body').animate({
+    scrollTop: $('#resources').offset().top
+}, 1000);
+});
+
+weather();
+suncast();
