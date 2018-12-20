@@ -8,6 +8,8 @@ function weather() {
   var apiKey = '6b419ea4e9378d0f8f98d7419154be75'; //DarkSky Key
   var url = 'https://api.forecast.io/forecast/';
 
+
+
   navigator.geolocation.getCurrentPosition(success, error);
 
   function success(position) {
@@ -52,6 +54,8 @@ function weather() {
   };
   
   
+
+  
     });
   }
 
@@ -71,7 +75,7 @@ function weather() {
 function suncast() {
   var location = document.getElementById("location");
   var apiKey = 'F4qebA-81wVfGJiJYfm_XLKHzSDgG99J'; //solcast API key
-  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=149.117&latitude=-35.277&api_key=>F4qebA-81wVfGJiJYfm_XLKHzSDgG99J<&format=jso';
+  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=149.117&latitude=-35.277&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
   var data = 'zenith'
 
 $("#zenith-button").click(function(){
