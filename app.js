@@ -30,8 +30,8 @@ function weather() {
         When the sun's UV-B rays hit the skin, a reaction takes place that enables skin cells to manufacture \
         vitamin D.")
     }
-      else if (position.coords.latitude < 37) { 
-        latitudeFeedback.innerHTML = ("You are also close enough to the equator that you can get your regular dose of Vitamin D with regular sun exposure. Take advantage of the sun around midday.")
+      else if (position.coords.latitude < 37) + { 
+        latitudeFeedback:innerHTML = ("You are also close enough to the equator that you can get your regular dose of Vitamin D with regular sun exposure. Take advantage of the sun around midday.")
       }
       else {
         latitudeFeedback.innerHTML = ("Are you still on Earth?")
@@ -39,7 +39,7 @@ function weather() {
 
       //if/else for tempfeedback
   if (data.currently.temperature < 80) {
-    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions and prevent sunburn and to other MS related symptoms\
+    tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions and prevent sunburn and to avoid other MS related symptoms\
      when temparatures are above 80 degree F. \
     Individuals with MS often report more symptoms at higher temperatures.")
   }
@@ -78,9 +78,14 @@ function suncast() {
   var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=149.117&latitude=-35.277&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
   var data = 'zenith'
 
-$("#zenith-button").click(function(){
+$("#zenith-button").click(function() {
+  $.ajax({
+    headers : {
+      'Access-Control-Allow-Origin' : '*'
+    }
+  });
   $.getJSON( url, function(data, status){
-    alert("zenith:" + apikey + data + "?callback=?" + status);
+    alert('zenith:' + apikey + data + "?callback=?" + status);
     $('#zenith').html('Your current solar zenith: ' + data.zenith);
   });
 });
