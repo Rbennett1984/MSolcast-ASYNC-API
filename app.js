@@ -75,7 +75,7 @@ function weather() {
 function suncast() {
   var location = document.getElementById("location");
   var apiKey = 'F4qebA-81wVfGJiJYfm_XLKHzSDgG99J'; //solcast API key
-  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=149.117&latitude=-35.277&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
+  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=30&latitude=-82&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
   var data = 'zenith'
 
 $("#zenith-button").click(function() {
@@ -93,21 +93,5 @@ $("#zenith-button").click(function() {
 }
 
 
- 
-
-//click event for local forecast
-$('#forecast-button').click(function(){
-  $('html, body').animate({
-    scrollTop: $('#feedback').offset().top
-}, 1000);
-});
-
-//click event for resources button
-$('#resources-button').click(function(){
-  $('html, body').animate({
-    scrollTop: $('#resources').offset().top
-}, 1000);
-});
 
 weather();
-suncast();
