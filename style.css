@@ -53,13 +53,12 @@ header {
   }
   
   /* middle column */
-  .col.4 {
+  .col-4 {
     grid-area: middle;
     padding: 10px;
     margin-top:100px;
     align-content: left;
-    display: inline-block;
-  }
+    display: inline-block; 
   
   /* right column */
   .right {
@@ -70,10 +69,17 @@ header {
     display: inline-block;
   }
 
-  #abstract
+
 
   #forecast {
     border: black solid 1px;
+    grid-area: header;
+    background-color:  #1d262c;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffa228
 
   }
   

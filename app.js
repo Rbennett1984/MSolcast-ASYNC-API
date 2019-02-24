@@ -40,7 +40,7 @@ function weather() {
       //if/else for tempfeedback
   if (data.currently.temperature < 80) {
     tempFeedback.innerHTML = ("It seems it's mild enough to go outside. Remember to take precautions and prevent sunburn and to avoid other MS related symptoms\
-     when temparatures are above 80 degree F. \
+     when temparatures are above 80 degrees F. \
     Individuals with MS often report more symptoms at higher temperatures.")
   }
 
@@ -67,31 +67,52 @@ function weather() {
 }
 
 
+ //Scroll event for Local Forecast button
+ $('#forecast-button').click(function(){
+    $('html, body').animate({
+        scrollTop: $("#forecast").offset().top
+    }, 2000);
+});
+
+
+ //Scroll event for Resources button
+ $('#resources-button').click(function(){
+  $('html, body').animate({
+      scrollTop: $("#resources").offset().top
+  }, 2000);
+});
 
 
 
 //Solar forecast for zenith using solcast API 
 
-function suncast() {
-  var location = document.getElementById("location");
-  var apiKey = 'F4qebA-81wVfGJiJYfm_XLKHzSDgG99J'; //solcast API key
-  var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=30&latitude=-82&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
-  var data = 'zenith'
+//const solcast_URL = https: api.solcast.com.au/radiation/forecasts?longitude=30&latitude=-82&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
 
-$("#zenith-button").click(function() {
-  $.ajax({
-    headers : {
-      'Access-Control-Allow-Origin' : '*'
-    }
-  });
-  $.getJSON( url, function(data, status){
-    alert('zenith:' + apikey + data + "?callback=?" + status);
-    $('#zenith').html('Your current solar zenith: ' + data.zenith);
-  });
-});
+//$('#zenith-button').click( 
+//function getDataFromApi(searchTerm, callback) {
+  
+ // }
+ // $.getJSON(solcast_URL, zenith, callback)
+//});
 
-}
 
+
+//function suncast() {
+  //var location = document.getElementById("location");
+  //var apiKey = 'F4qebA-81wVfGJiJYfm_XLKHzSDgG99J'; //solcast API key
+  //var url = 'https://api.solcast.com.au/radiation/forecasts?longitude=30&latitude=-82&api_key=F4qebA-81wVfGJiJYfm_XLKHzSDgG99J&format=json';
+  //var data = 'zenith'
+
+//$("#zenith-button").click(function() {
+ // $.getJSON( url, function(data, status){
+   // alert('zenith:' + apikey + data + "?callback=?" + status);
+   // $('#zenith').html('Your current solar zenith: ' + data.zenith);
+  //});
+//});
+
+//}
 
 
 weather();
+
+
